@@ -39,6 +39,11 @@ while True:
             continue
 
         dados = consultar_cep(cep)
+
+        if dados.get("erro"):
+            print("CEP não encontrado.")
+            continue
+
         exibir_endereco(dados)
 
     elif opcao == "2":
